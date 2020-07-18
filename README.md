@@ -54,8 +54,8 @@ os devidos testes
 </pre>
 Rota criada com validação do envio das informações, validação com o <a href="https://hapi.dev/module/joi/">@hapi/joi</a> 
 Com duas camadas de validação uma já citada com o Joi e outra com o Model de Usuários.
-Usuário e retornado com o status 201 de criação criando um token e persistiondo junto ao usuário na base dados
-e com tempo de expiração de 30 minutos do token;
+Usuário e retornado com o status 201 de criação criando um token e persistido junto ao usuário na base dados
+e com tempo de expiração de 30 minutos;
 </p>
 <h3>Rota SingIn</h3>
 <p>
