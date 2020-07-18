@@ -39,6 +39,7 @@ os devidos testes
 <h2>Forma de envio para cada rota</h2>
 <h3>Rota SingUp</h3>
 <p> Rota de cadastro de usuário recebe json com os campos de:
+<pre>
 <code>
 {
 	"nome": "Fulano de Tal",
@@ -50,6 +51,22 @@ os devidos testes
 	}
 }
 </code>
+</pre>
 Rota criada com validação do envio das informações, validação com o <a href="https://hapi.dev/module/joi/">@hapi/joi</a> 
-Caso duas camadas de validação uma já citada com o Joi e outra com o Model de Usuários.
+Com duas camadas de validação uma já citada com o Joi e outra com o Model de Usuários.
+Usuário e retornado com o status 201 de criação criando um token e persistiondo junto ao usuário na base dados
+e com tempo de expiração de 30 minutos do token;
 </p>
+<h3>Rota SingIn</h3>
+<p>
+	Rota recebe json como os campos:
+	<pre>
+	<code>
+	{
+	"email": "wilk@hotmail.com",
+	"senha": "123456"
+	}
+	</code>
+	</pre>
+Rota criada para a autenticação do usuário com esses campos passados é retornado o usuário cadastrado na base de dados,
+atualizando também o tempo de expiração do token
