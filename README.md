@@ -89,3 +89,37 @@ Rota necessita autenticação com envio de token no cabecalho da requisição ex
 		<li><a href="https://jestjs.io/docs/en/api">Jest</a></li>
 	</ul>
 </p>
+
+<h2>O porque dos pacotes</h2>
+<h3>Express</h3>
+<p>
+	O Express é um framework para aplicativo da web do Node.js mínimo e flexível que fornece um conjunto robusto de recursos para aplicativos web e móvel.
+</p>
+<h3>Jsonwebtoken</h3>
+<p>
+	Usado pra criação do token, passando o nome e o email do usuário e criando uma sessão local quando se é criado um usuário,
+	ou quando o usuario usa a rota singIn para se logar no sistema, a função verify da lib verifica se o token existe no cabecalho
+	e caso exista verifica se existe o usuário com as mesmas credencias no banco, por fim verifica se o token expirou ou não.
+</p>
+<h3>Joi</h3>
+<p>
+	Usado para a validação antes do cadastro, ele recebe o objeto json e valida ou não, caso validado passa para o cadastro do banco.
+</p>
+<h3>Mongoose</h3>
+<p>
+Usado para criação dos modelos e/ou entidades para criação correta na hora da percistência junto ao banco, banco noSql MongoDB
+</p>
+<h3>Jest</h3>
+<p>
+Lib criada pelo Facebook primordialmente para teste de framework front-end, para um bom funcinamento do uso dos teste junto ao mongoose, foi istalado 
+banco de dados Mongo em memória para não interferir na base de dados do sistema, e feitas algumas alterações para o bom funcionamento dos testes.
+	Mais informações <a href="https://jestjs.io/docs/en/mongodb">Aqui</a>
+</p>
+
+
+
+
+
+
+
+
