@@ -7,7 +7,7 @@ router.post("/singUp", userController.create);
 router.post("/singIn", userController.singIn);
 router.get("/user/:id", auth, userController.findId);
 router.use((req, res, next) => {
-    const error = {error: "Not found"};
+    const error = {error: "Rota não encontrada!"};
     error.status = 404;
     next(error);
 });
