@@ -4,11 +4,6 @@ require("dotenv").config({
 const mongoose = require("mongoose");
 const User = require("../../../src/models/users");
 const {userFaker, userUpdate} = require("../../userFaker");
-const {
-    req,
-    res
-} = require("express")();
-
 
 describe("Teste de Usuarios", () => {
     let db;
