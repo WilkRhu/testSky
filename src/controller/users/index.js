@@ -1,7 +1,9 @@
 const create = require("./create");
-const findAll = require("./findAll");
+const findId = require("./findId");
+const singIn = require("./singIn");
 
 module.exports = {
     create,
-    findAll
+    findId,
+    singIn
 };
