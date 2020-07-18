@@ -25,23 +25,28 @@ const userSchema = new Schema({
         required: true
     },
     telefones: [{
+        _id: false,
         numero: {
-            type: Number,
+            type: String,
             min: 1,
             max: 10
         },
         ddd: {
-            type: Number,
+            type: String,
             min: 1,
             max: 3
         }
     }],
+    token: {
+        type: String,
+    },
     created_at: {
         type: String,
         default: Date.now
     },
     updated_at: {
-        type: Date
+        type: String,
+        default: Date.now
     }
 });
 
