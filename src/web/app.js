@@ -10,13 +10,13 @@ const router = require("./routes");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(router);
 app.use((req, res) => {
     res.status(404).send({
-        error: "Rota não encontrada"
+        error: "Rota não encontrada!"
     });
 });
 
-app.use(router);
 app.use(cors());
 
 module.exports = app;
