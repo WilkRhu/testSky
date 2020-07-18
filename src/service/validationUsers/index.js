@@ -12,7 +12,9 @@ const userValidation = Joi.object({
     telefones: Joi.object({
         numero: Joi.string(),
         ddd: Joi.string()
-    })
+    }),
+    
+    token: Joi.string()
 });
 
 module.exports = userValidation;
