@@ -41,6 +41,17 @@ describe("Teste de cadastro nos endpoints", () => {
             expect(createUser.body).toBe("Erro de Validação");
         });
 
+        test("Test Rota Singin", async() => {
+            const createUser = await request(app).post("/singUp")
+            .send(userFaker);
+            const {email, senha} = userFaker;
+            const singIn = await request(app).post("/singIn")
+            .send({email, senha});
+            expect(singIn.status).toBe(200)
+            expect(singIn.body.nome).toBe(createUser.body.nome)
+
+        })
+
         afterEach(async () => {
             await User.deleteMany({});
         });
