@@ -63,10 +63,29 @@ e com tempo de expiração de 30 minutos;
 	<pre>
 	<code>
 	{
-	"email": "wilk@hotmail.com",
+	"email": "fulano@gmail.com",
 	"senha": "123456"
 	}
 	</code>
 	</pre>
 Rota criada para a autenticação do usuário com esses campos passados é retornado o usuário cadastrado na base de dados,
-atualizando também o tempo de expiração do token
+atualizando também o tempo de expiração do token;
+
+<h3>Rota Find User ID</h3>
+<p>
+Rota responsável pela busca de usuários passando o id e o token via header.
+	<code>
+		https://testskyexpress.herokuapp.com/user/:id
+	</code>	
+Rota necessita autenticação com envio de token no cabecalho da requisição ex: Berear <token>
+	
+<h2>Pacotes relevantes usados</h2>
+<p>
+	<ul>
+		<li><a href="https://www.npmjs.com/package/express">Express</a></li>
+		<li><a href="https://www.npmjs.com/package/jsonwebtoken">Jsonwebtoken</a></li>
+		<li><a href="https://hapi.dev/module/joi/">Joi</a></li>
+		<li><a href="https://mongoosejs.com/">Mongoose</a></li>	
+		<li><a href="https://jestjs.io/docs/en/api">Jest</a></li>
+	</ul>
+</p>
