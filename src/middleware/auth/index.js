@@ -10,7 +10,11 @@ const auth =  (req, res, next) => {
     
     jwt.verify(token_header, process.env.KEY_SISTEM, async (err, decoded) =>{
         if(err){
-            return res.status(401).send({error: "Sessão Inválida!"});  
+            if(err.message === "invalid token"){
+                return res.status(400).json({error: "Token inválido"});
+            } else if(err.message === "jwt expired") {
+                return res.status(401).send({error: "Sessão Inválida!"});  
+            }
         } 
         const { email } = decoded;
         const pass = await User.findOne({ _id: id, email: email});
