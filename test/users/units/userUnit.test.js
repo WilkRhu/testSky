@@ -1,20 +1,17 @@
 require("dotenv").config({
     path: process.env.NODE_ENV === "test" ? ".env.test" : ".env"
 });
+const {mongoUri} = require("../../../globalConfig.json");
 const mongoose = require("mongoose");
 const User = require("../../../src/models/users");
 const {userFaker, userUpdate} = require("../../userFaker");
-const {
-    req,
-    res
-} = require("express")();
 
 
 describe("Teste de Usuarios", () => {
     let db;
 
     beforeAll(async () => {
-        await mongoose.connect(process.env.URL_DB, {
+        await mongoose.connect(mongoUri, {
             useNewUrlParser: true,
             useCreateIndex: true
         }, (err) => {
