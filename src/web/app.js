@@ -10,10 +10,10 @@ const router = require("./routes");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-    const error = {error: "Rota não encontrada!"};
-    error.status = 404;
-    next(error);
+app.use((req, res) => {
+    res.status(404).send({
+        error: "Rota não encontrada"
+    });
 });
 
 app.use(router);
