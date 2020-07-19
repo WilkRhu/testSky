@@ -16,8 +16,8 @@ const auth =  (req, res, next) => {
                 return res.status(401).send({error: "Sessão Inválida!"});  
             }
         } 
-        const { email } = decoded;
-        const pass = await User.findOne({ _id: id, email: email});
+
+        const pass = await User.findOne({ _id: id });
         if(pass){
             res.locals.auth_data = decoded;
             return next();
