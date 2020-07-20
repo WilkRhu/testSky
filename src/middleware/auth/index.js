@@ -4,7 +4,6 @@ const User = require("../../models/users");
 
 const auth =  (req, res, next) => {
     const token_header = req.headers.berear;
-    const { id } = req.params;
 
     if(!token_header) return res.status(401).send({error: "Token não informado!"});
     
@@ -16,8 +15,8 @@ const auth =  (req, res, next) => {
                 return res.status(401).send({error: "Sessão Inválida!"});  
             }
         } 
-
-        const pass = await User.findOne({ _id: id });
+        const { email } = decoded;
+        const pass = await User.findOne({ email });
         if(pass){
             res.locals.auth_data = decoded;
             return next();
